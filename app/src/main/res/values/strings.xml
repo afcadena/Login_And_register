@@ -3,5 +3,11 @@
     <string name="Hello">Hey there, </string>
     <string name="create">Create an Account </string>
     <string name="welcome">Welcome Back </string>
+    <string name="user">First Name </string>
+    <string name="user_l">Last Name </string>
+    <string name="email">Email </string>
+    <string name="password">Password </string>
+    <string name="hide_password">Hide Password</string>
+    <string name="show_password">Show Password</string>
 
 </resources>
