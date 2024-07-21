@@ -9,5 +9,12 @@
     <string name="password">Password </string>
     <string name="hide_password">Hide Password</string>
     <string name="show_password">Show Password</string>
+    <string name="terms_and_conditions">By continuing you accept our Privacy Policy and term of use </string>
+    <string name="terms_and_conditions_header">term of use </string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="go_to_login">Already have an account? Login</string>
+    <string name="forgot_password">Forgot your password</string>
 
 </resources>

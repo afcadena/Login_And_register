@@ -8,6 +8,9 @@
       <SelectionState runConfigName="DefaultPreviewOfSignUpScreen">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="TermsAndConditionsScreenPreview">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

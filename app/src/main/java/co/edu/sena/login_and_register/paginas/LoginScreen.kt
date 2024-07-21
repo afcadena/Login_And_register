@@ -9,37 +9,29 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Lock
-import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import co.edu.sena.login_and_register.R
 import co.edu.sena.login_and_register.Navigation.PostOfficeAppRouter
 import co.edu.sena.login_and_register.Navigation.Screen
-import co.edu.sena.login_and_register.componentes.CheckboxComponent
+import co.edu.sena.login_and_register.R
+import co.edu.sena.login_and_register.app.PostOfficeApp
 import co.edu.sena.login_and_register.componentes.ClickableLogintextComponent
 import co.edu.sena.login_and_register.componentes.DividerTextComponent
 import co.edu.sena.login_and_register.componentes.HeadingTextComponent
 import co.edu.sena.login_and_register.componentes.MyTextField
 import co.edu.sena.login_and_register.componentes.NormalTextComponent
 import co.edu.sena.login_and_register.componentes.PasswordTextField
+import co.edu.sena.login_and_register.componentes.UnderLineTextComponent
 import co.edu.sena.login_and_register.componentes.buttonComponent
 
-
-private val BlendMode.TermsandConditionsScreen: Screen
-    get() {
-        TODO("Not yet implemented")
-    }
-
 @Composable
-fun PaginaInicioSesion() {
+fun LoginScreen() {
     Surface(
         color = Color.White,
         modifier = Modifier
@@ -48,30 +40,8 @@ fun PaginaInicioSesion() {
             .padding(28.dp)
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
-            NormalTextComponent(value = stringResource(id = R.string.Hello))
-            HeadingTextComponent(value = stringResource(id = R.string.create))
-            Spacer(modifier = Modifier.height(20.dp))
-
-            MyTextField(
-                labelValue = stringResource(id = R.string.user),
-                icon = {
-                    Icon(
-                        Icons.Rounded.Person,
-                        contentDescription = null
-                    )
-                }
-            )
-
-            MyTextField(
-                labelValue = stringResource(id = R.string.user_l),
-                icon = {
-                    Icon(
-                        Icons.Rounded.Person,
-                        contentDescription = null
-                    )
-                }
-            )
-
+            NormalTextComponent(value = stringResource(id = R.string.login))
+            HeadingTextComponent(value = stringResource(id = R.string.welcome))
             MyTextField(
                 labelValue = stringResource(id = R.string.email),
                 icon = {
@@ -88,32 +58,23 @@ fun PaginaInicioSesion() {
                         Icons.Rounded.Lock,
                         contentDescription = null
                     )
-
                 }
             )
-
-            CheckboxComponent(value = stringResource(id = R.string.terms_and_conditions),
-                onTextSelected ={
-                    PostOfficeAppRouter.navigateTo(Screen.TermsandConditionsScreen)
-                } )
             Spacer(modifier = Modifier.height(40.dp))
-
-            buttonComponent(value = stringResource(id = R.string.register))
-
+            UnderLineTextComponent(value = stringResource(id = R.string.forgot_password))
+            Spacer(modifier = Modifier.height(40.dp))
+            buttonComponent(value = stringResource(id = R.string.login))
             Spacer(modifier = Modifier.height(20.dp))
-
             DividerTextComponent()
-
-            ClickableLogintextComponent(onTextSelected = {
-
+            ClickableLogintextComponent(tryingToLogin = false, onTextSelected = {
+                PostOfficeAppRouter.navigateTo(Screen.LoginScreen)
             })
         }
     }
 }
 
-
 @Preview
 @Composable
-fun DefaultPreviewOfSignUpScreen(){
-    PaginaInicioSesion()
+fun DefaultPreviewLoginScreen() {
+    LoginScreen()
 }
